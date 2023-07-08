@@ -1,10 +1,10 @@
 local lsp = require("lsp-zero")
+local lspconfig = require("lspconfig")
 
+lspconfig.zls.setup {}
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  'tsserver',
-  'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
