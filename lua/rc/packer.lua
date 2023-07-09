@@ -17,6 +17,9 @@ return require('packer').startup(function(use)
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
 	  config = function()
+          require('rose-pine').setup({
+              disable_background = true,
+          })
 		  vim.cmd('colorscheme rose-pine')
 	  end
   })
@@ -73,6 +76,10 @@ return require('packer').startup(function(use)
   --use("github/copilot.vim")
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
 
 end)
 
